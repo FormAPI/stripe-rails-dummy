@@ -1,10 +1,7 @@
+puts 'Loading User model'
+
 class User < ApplicationRecord
   include Stripe::Callbacks
-
-  def say_something
-    say_hello
-    # say_tootsie
-  end
 
   def say_tootsie
     puts 'tootsie!'
@@ -14,7 +11,8 @@ class User < ApplicationRecord
     puts 'hello!'
   end
 
-  after_customer_updated! do |customer, event|
-    User.new.say_something
+  after_customer_updated! do |_customer, _event|
+    # User.new.say_hello
+    User.new.say_tootsie
   end
 end

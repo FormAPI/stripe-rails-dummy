@@ -2,6 +2,8 @@ require_relative 'boot'
 
 require 'rails/all'
 
+ENV['STRIPE_SECRET_KEY'] = 'foo'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
